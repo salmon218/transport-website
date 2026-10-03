@@ -1,0 +1,1863 @@
+/* =========================================================
+   TRANSPORT — FULL CSS
+   ========================================================= */
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    color: #171717;
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================= VARIABLES ================= */
+
+:root {
+    --orange: #ff6b1a;
+    --orange-dark: #e95c0d;
+    --black: #111;
+    --dark: #171717;
+    --gray: #6d6d6d;
+    --light-gray: #f5f5f3;
+    --border: #e8e8e5;
+    --container: 1180px;
+}
+
+
+/* ================= GENERAL ================= */
+
+.container {
+    width: min(var(--container), calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.section-heading > span,
+.section-label {
+    display: inline-block;
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-content h2 {
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.section-heading p,
+.contact-content > p,
+.about-content p {
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid #242424;
+}
+
+.header-inner {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.logo span,
+.footer strong span {
+    color: var(--orange);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav a {
+    position: relative;
+
+    color: #d6d6d6;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+
+    transition: width 0.25s ease;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.lang-btn {
+    border: 0;
+    background: transparent;
+
+    padding: 7px 8px;
+
+    color: #777;
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.lang-btn:hover {
+    color: #fff;
+}
+
+.lang-btn.active {
+    color: #fff;
+    background: var(--orange);
+}
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+    background: transparent;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.mobile-menu-btn span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    background: #fff;
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+    padding-top: 76px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 107, 26, 0.12),
+            transparent 30%
+        ),
+        #f7f7f5;
+}
+
+.hero-content {
+    min-height: 644px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 20;
+}
+
+.hero-label {
+    color: var(--orange);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    animation: heroFadeUp 0.7s ease both;
+}
+
+.hero h1 {
+    max-width: 680px;
+
+    font-size: clamp(50px, 7vw, 88px);
+    line-height: 0.98;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 28px;
+
+    animation: heroFadeUp 0.8s ease 0.1s both;
+}
+
+.hero-text p,
+.hero-text > p {
+    max-width: 560px;
+
+    color: #656565;
+
+    font-size: 18px;
+
+    margin-bottom: 34px;
+
+    animation: heroFadeUp 0.8s ease 0.2s both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    animation: heroFadeUp 0.8s ease 0.3s both;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: #fff;
+    background: var(--orange);
+}
+
+.btn-primary:hover {
+    background: var(--orange-dark);
+    box-shadow: 0 12px 30px rgba(255, 107, 26, 0.25);
+}
+
+.btn-outline {
+    color: var(--black);
+
+    border-color: #d8d8d4;
+
+    background: #fff;
+}
+
+.btn-outline:hover {
+    border-color: #aaa;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    height: 400px;
+
+    display: flex;
+    align-items: flex-end;
+
+    animation: heroVisualIn 1s cubic-bezier(.22, 1, .36, 1) 0.2s both;
+}
+
+.road-animation {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #9bc7df 0%,
+            #dbe9ed 48%,
+            #78985c 48%,
+            #58733f 66%,
+            #333 66%,
+            #292929 100%
+        );
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.15);
+
+    isolation: isolate;
+}
+
+
+/* ================= MOVING LANDSCAPE ================= */
+
+/*
+   Слой пейзажа.
+   Он двигается, машина остаётся на месте.
+*/
+
+.road-animation::after {
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    top: 0;
+
+    width: 300%;
+    height: 68%;
+
+    background:
+
+        /* солнце */
+        radial-gradient(
+            circle at 11% 28%,
+            rgba(255, 211, 104, 0.95) 0 22px,
+            rgba(255, 211, 104, 0.25) 23px,
+            transparent 55px
+        ),
+
+        /* горы */
+        linear-gradient(
+            135deg,
+            transparent 0 35%,
+            rgba(76, 103, 105, 0.95) 35% 39%,
+            transparent 39% 100%
+        ),
+
+        linear-gradient(
+            45deg,
+            transparent 0 45%,
+            rgba(245, 245, 242, 0.9) 45% 47%,
+            rgba(72, 91, 94, 0.95) 47% 54%,
+            transparent 54%
+        ),
+
+        /* деревья */
+        radial-gradient(
+            ellipse at 8% 94%,
+            #294b32 0 40px,
+            transparent 41px
+        ),
+
+        radial-gradient(
+            ellipse at 17% 90%,
+            #365f39 0 48px,
+            transparent 49px
+        ),
+
+        radial-gradient(
+            ellipse at 27% 94%,
+            #294b32 0 42px,
+            transparent 43px
+        ),
+
+        radial-gradient(
+            ellipse at 38% 90%,
+            #416b40 0 50px,
+            transparent 51px
+        ),
+
+        radial-gradient(
+            ellipse at 49% 94%,
+            #294b32 0 42px,
+            transparent 43px
+        ),
+
+        radial-gradient(
+            ellipse at 61% 90%,
+            #365f39 0 48px,
+            transparent 49px
+        ),
+
+        radial-gradient(
+            ellipse at 74% 94%,
+            #294b32 0 43px,
+            transparent 44px
+        ),
+
+        radial-gradient(
+            ellipse at 88% 90%,
+            #416b40 0 50px,
+            transparent 51px
+        );
+
+    background-size:
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        300px 100px,
+        260px 100px,
+        300px 100px,
+        280px 100px,
+        300px 100px,
+        260px 100px,
+        300px 100px,
+        280px 100px;
+
+    background-position:
+        0 0,
+        0 0,
+        0 0,
+        0 100%,
+        100px 100%,
+        220px 100%,
+        320px 100%,
+        500px 100%,
+        700px 100%,
+        850px 100%,
+        1050px 100%;
+
+    background-repeat: no-repeat;
+
+    animation: landscapeMove 16s linear infinite;
+}
+
+
+/* =========================================================
+   ROAD
+   ========================================================= */
+
+.road-animation::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: -5%;
+    right: -5%;
+    bottom: -8%;
+
+    height: 48%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #484848,
+            #282828
+        );
+
+    transform: perspective(300px) rotateX(7deg);
+    transform-origin: bottom;
+}
+
+
+/* =========================================================
+   ROAD LINE
+   ========================================================= */
+
+.road-line {
+    position: absolute;
+
+    z-index: 8;
+
+    left: -20%;
+    bottom: 30px;
+
+    width: 140%;
+    height: 5px;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            #fff 0 70px,
+            transparent 70px 135px
+        );
+
+    animation: roadMove 0.75s linear infinite;
+}
+
+
+/* =========================================================
+   VAN
+   ========================================================= */
+
+.van {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    bottom: 32px;
+
+    font-size: 92px;
+    line-height: 1;
+
+    transform: translateX(-50%);
+
+    /*
+       Машина остаётся практически на месте.
+       Только небольшая подвеска.
+    */
+    animation: vanSuspension 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+   ========================================================= */
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroVisualIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes landscapeMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-12%);
+    }
+
+    50% {
+        transform: translateX(-25%);
+    }
+
+    75% {
+        transform: translateX(-12%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes roadMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -135px 0;
+    }
+}
+
+@keyframes vanSuspension {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-2px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+    background: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    min-height: 280px;
+
+    padding: 32px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: #fff;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--orange);
+
+    box-shadow:
+        0 20px 45px rgba(255, 107, 26, 0.14),
+        0 20px 45px rgba(0, 0, 0, 0.07);
+}
+
+.service-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    background: #f4f4f1;
+    color: #222;
+
+    transition: 0.25s ease;
+}
+
+.service-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.service-card:hover .service-icon {
+    color: var(--orange);
+    background: #fff0e7;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 107, 26, 0.18);
+}
+
+.service-card h3 {
+    font-size: 21px;
+    letter-spacing: -0.5px;
+
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CALCULATOR
+   ========================================================= */
+
+.calculator-section {
+    background: #111;
+    color: #fff;
+}
+
+.calculator-wrapper {
+    padding: 65px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(255, 107, 26, 0.12),
+            transparent 30%
+        ),
+        #191919;
+}
+
+.calculator-heading {
+    max-width: 680px;
+    margin-bottom: 42px;
+}
+
+.calculator-heading > span {
+    color: var(--orange);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.calculator-heading h2 {
+    margin-top: 12px;
+    margin-bottom: 15px;
+
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.calculator-heading p {
+    color: #999;
+}
+
+.calculator-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d8d8d8;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    background: #222;
+    color: #fff;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input {
+    height: 52px;
+    padding: 0 16px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 26, 0.12);
+}
+
+
+/* =========================================================
+   CITY AUTOCOMPLETE
+   ========================================================= */
+
+.autocomplete-wrapper {
+    position: relative;
+}
+
+.city-suggestions {
+    position: absolute;
+
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+
+    z-index: 50;
+
+    display: none;
+
+    max-height: 240px;
+    overflow-y: auto;
+
+    padding: 5px;
+
+    border: 1px solid #3d3d3d;
+    border-radius: 9px;
+
+    background: #252525;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.city-suggestions.active {
+    display: block;
+}
+
+.city-suggestion {
+    padding: 11px 13px;
+
+    border-radius: 6px;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+.city-suggestion:hover {
+    color: #fff;
+    background: #333;
+}
+
+.city-suggestion strong {
+    color: #fff;
+}
+
+
+/* =========================================================
+   ERRORS
+   ========================================================= */
+
+.field-error {
+    display: none;
+
+    margin-top: 7px;
+
+    color: #ff5f5f;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.field-error.active {
+    display: block;
+}
+
+.form-group.has-error input,
+.form-group.has-error .custom-select-button {
+    border-color: #ff5f5f;
+}
+
+
+/* =========================================================
+   CUSTOM SELECT
+   ========================================================= */
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select-button {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+
+    background: #222;
+    color: #fff;
+
+    text-align: left;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.custom-select-button:hover {
+    border-color: #555;
+}
+
+.custom-select.open .custom-select-button {
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 26, 0.12);
+}
+
+.select-arrow {
+    color: #aaa;
+    font-size: 16px;
+}
+
+.custom-options {
+    position: absolute;
+
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+
+    z-index: 40;
+
+    display: none;
+
+    padding: 5px;
+
+    border: 1px solid #3d3d3d;
+    border-radius: 9px;
+
+    background: #252525;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.custom-select.open .custom-options {
+    display: block;
+}
+
+.custom-option {
+    padding: 11px 13px;
+
+    border-radius: 6px;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+.custom-option:hover {
+    color: #fff;
+    background: #333;
+}
+
+
+/* =========================================================
+   CALCULATOR BUTTON / RESULT
+   ========================================================= */
+
+.calculator-button {
+    grid-column: 1 / -1;
+
+    margin-top: 10px;
+
+    width: 100%;
+    height: 56px;
+}
+
+.calculator-result {
+    grid-column: 1 / -1;
+
+    display: none;
+
+    padding: 24px;
+
+    border: 1px solid #3c3c3c;
+    border-radius: 12px;
+
+    background: #202020;
+
+    text-align: center;
+}
+
+.calculator-result.active {
+    display: block;
+}
+
+.calculator-result strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #fff;
+
+    font-size: 14px;
+}
+
+.calculator-price {
+    color: var(--orange);
+
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery {
+    background: #f7f7f5;
+}
+
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.gallery-filter {
+    padding: 9px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 100px;
+
+    background: #fff;
+    color: #666;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.gallery-filter:hover {
+    border-color: #bbb;
+    color: #222;
+}
+
+.gallery-filter.active {
+    border-color: var(--black);
+
+    background: var(--black);
+    color: #fff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.gallery-card {
+    overflow: hidden;
+
+    border: 1px solid #e5e5e1;
+    border-radius: 14px;
+
+    background: #fff;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--orange);
+
+    box-shadow:
+        0 0 0 1px rgba(255, 107, 26, 0.16),
+        0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-card.hidden {
+    display: none;
+}
+
+.gallery-image {
+    aspect-ratio: 1 / 0.8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddd,
+            #c9c9c5
+        );
+
+    color: #777;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.gallery-info {
+    padding: 16px;
+}
+
+.gallery-info span {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    margin-bottom: 4px;
+}
+
+.gallery-info small {
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+    background: #fff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.about-content p {
+    max-width: 620px;
+    margin-top: 18px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.stat {
+    padding: 28px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.stat strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.stat span {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    background: #050505;
+    color: #fff;
+}
+
+.contact .contact-content h2 {
+    color: #fff;
+}
+
+.contact .contact-content > p {
+    color: #999;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+.contact-details {
+    display: grid;
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+.contact-details strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #777;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-details a {
+    color: #fff;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.contact-details a:hover {
+    color: var(--orange);
+}
+
+.contact-form {
+    padding: 35px;
+
+    border-radius: 16px;
+
+    background: #111;
+
+    border: 1px solid #2b2b2b;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    color: #ddd;
+}
+
+.contact-form input,
+.contact-form textarea {
+    color: #fff;
+    background: #1b1b1b;
+    border-color: #383838;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    padding: 14px 16px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 40px 0;
+
+    background: #111;
+    color: #fff;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer strong {
+    font-size: 18px;
+}
+
+.footer p {
+    margin-top: 4px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.footer-inner > div:last-child {
+    color: #666;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: min(var(--container), calc(100% - 32px));
+    }
+
+    .nav {
+        gap: 18px;
+    }
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid,
+    .contact-grid {
+        gap: 50px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU / TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    html {
+        scroll-padding-top: 68px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .header-inner {
+        height: 68px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav {
+        position: fixed;
+
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        display: flex;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 20px 18px;
+
+        background: #050505;
+
+        border-top: 1px solid #242424;
+        border-bottom: 1px solid #242424;
+
+        transform: translateY(-130%);
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+    }
+
+    .nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav a {
+        display: block;
+
+        padding: 14px 4px;
+
+        color: #ddd;
+
+        font-size: 15px;
+
+        border-bottom: 1px solid #222;
+    }
+
+    .nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .language-switcher {
+        margin-left: auto;
+        margin-right: 4px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 68px;
+    }
+
+    .hero-content {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 70px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 12vw, 72px);
+        letter-spacing: -3px;
+    }
+
+    .hero-text > p {
+        font-size: 16px;
+    }
+
+    .hero-visual {
+        height: 260px;
+    }
+
+    .road-animation {
+        height: 175px;
+        border-radius: 16px;
+    }
+
+    .van {
+        font-size: 68px;
+        bottom: 28px;
+    }
+
+    .road-line {
+        bottom: 17px;
+    }
+
+    .calculator-wrapper {
+        padding: 38px 24px;
+        border-radius: 18px;
+    }
+
+    .calculator-form {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .calculator-button,
+    .calculator-result {
+        grid-column: auto;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contact-form {
+        padding: 26px 22px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(var(--container), calc(100% - 24px));
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 36px;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-content h2 {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .section-heading p,
+    .contact-content > p,
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .header-inner {
+        height: 64px;
+    }
+
+    .nav {
+        top: 64px;
+    }
+
+    .language-switcher {
+        gap: 1px;
+    }
+
+    .lang-btn {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero {
+        padding-top: 64px;
+    }
+
+    .hero-content {
+        padding: 58px 0 48px;
+        gap: 32px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 13vw, 58px);
+        line-height: 1;
+        letter-spacing: -2.5px;
+        margin-bottom: 22px;
+    }
+
+    .hero-label {
+        margin-bottom: 14px;
+    }
+
+    .hero-text > p {
+        font-size: 16px;
+        margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-visual {
+        height: 205px;
+    }
+
+    .road-animation {
+        height: 145px;
+        border-radius: 14px;
+    }
+
+    .van {
+        font-size: 55px;
+        bottom: 22px;
+    }
+
+    .road-line {
+        bottom: 13px;
+        height: 3px;
+
+        background:
+            repeating-linear-gradient(
+                to right,
+                #fff 0 40px,
+                transparent 40px 80px
+            );
+    }
+
+    .road-animation::before {
+        height: 48%;
+    }
+
+    .services-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .gallery-filters {
+        gap: 7px;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding-bottom: 5px;
+
+        scrollbar-width: none;
+    }
+
+    .gallery-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-filter {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .gallery-card {
+        border-radius: 12px;
+    }
+
+    .calculator-wrapper {
+        padding: 30px 16px;
+    }
+
+    .calculator-heading {
+        margin-bottom: 30px;
+    }
+
+    .calculator-heading h2 {
+        font-size: 34px;
+        letter-spacing: -1.5px;
+    }
+
+    .calculator-price {
+        font-size: 32px;
+    }
+
+    .custom-options,
+    .city-suggestions {
+        max-height: 210px;
+    }
+
+    .about-grid,
+    .contact-grid {
+        gap: 32px;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .lang-btn {
+        padding: 5px 4px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-content h2,
+    .calculator-heading h2 {
+        font-size: 32px;
+    }
+
+    .van {
+        font-size: 50px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
